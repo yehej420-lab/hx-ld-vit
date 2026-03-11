@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HangXom - Trade local (Figma frame)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --choral-1: #ff6f61;
+        --choral-2: #ffbcb5;
+        --brown-main: #68342f;
+        --brown-dark: #40201c;
+        --bg-cream: #fffdfc;
+        --text-main: #68342f;
+        --text-muted: #935a54;
+        --border-gray: #b0b0b0;
+        --hero-bg-image: url("");
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+          sans-serif;
+        background-color: #ffffff;
+        color: var(--text-main);
+        line-height: 1.6;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .page {
+        margin: 0 auto;
+        background: #ffffff;
+      }
+
+      /* HEADER */
+      .top-bar {
+        background: var(--bg-cream);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 270px 20px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+      }
+
+      .top-logo {
+        width: 40px;
+      }
+
+      .top-logo img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+
+      /* HERO */
+      .hero {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        padding: 120px 270px 120px;
+        overflow: hidden;
+        background: linear-gradient(180deg, #ffffff 0%, #fde4e3 100%);
+      }
+
+      .hero-inner {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        width: 519px;
+      }
+
+      .hero-heading-block {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .hero-title-main {
+        font-size: 32px;
+        color: var(--brown-main);
+        line-height: 0;
+      }
+
+      .hero-title-brand {
+        font-size: 32px;
+        color: var(--brown-main);
+        line-height: 1.15;
+      }
+
+      .hero-title-brand span {
+        font-size: 40px;
+        font-weight: 800;
+        color: var(--choral-1);
+      }
+
+      .hero-subtitle {
+        font-size: 18px;
+        line-height: 1.6;
+        color: var(--text-muted);
+        max-width: 480px;
+      }
+
+      .hero-cta-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .hero-visual {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .hero-visual img {
+        max-width: 500px;
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .store-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 228px;
+        height: 54px;
+        border-radius: 27px;
+        padding: 0 24px;
+        background: var(--choral-1);
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 500;
+        border: none;
+        box-shadow: 0 4px 12px rgba(220, 142, 135, 0.4);
+        cursor: pointer;
+      }
+
+      .store-btn-icon {
+        width: 20px;
+        display: inline-block;
+      }
+
+      .store-btn-icon img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* STRIPE */
+      .stripe {
+        background: var(--choral-1);
+        color: #ffffff;
+        text-align: center;
+        padding: 56px 20px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .stripe span {
+        display: block;
+        font-weight: 500;
+        font-size: 14px;
+        margin-top: 6px;
+      }
+
+      /* WHY SECTION */
+      .section-why {
+        background: var(--bg-cream);
+        padding: 88px 270px 108px;
+      }
+
+      .eyebrow {
+        font-size: 14px;
+        font-weight: 800;
+        color: var(--choral-1);
+        margin-bottom: 8px;
+      }
+
+      .section-title {
+        font-size: 32px;
+        color: var(--brown-main);
+        line-height: 1.2;
+        margin-bottom: 48px;
+      }
+
+      .section-title span {
+        font-style: italic;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 32px;
+      }
+
+      .feature-card {
+        background: #fffdfc;
+        border-radius: 32px;
+        border: 1px solid var(--choral-1);
+        box-shadow: 0 4px 12px rgba(255, 120, 108, 0.2);
+        padding: 36px 24px;
+        text-align: center;
+      }
+
+      .feature-icon {
+        width: 56px;
+        margin: 0 auto 16px;
+      }
+
+      .feature-icon img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .feature-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--choral-1);
+        margin-bottom: 8px;
+      }
+
+      .feature-desc {
+        font-size: 14px;
+        color: var(--text-main);
+      }
+
+      /* HOW IT WORKS */
+      .section-how {
+        background: #fff5f5;
+        padding: 88px 270px 80px;
+      }
+
+      .how-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 40px;
+        margin-top: 60px;
+      }
+
+      .step-card {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        height: 510px;
+        gap: 12px;
+      }
+
+      .step-number {
+        position: top;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 21px;
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      .step-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 12px;
+        width: 52px;
+        height: 52px;
+        border-radius: 42px;
+        background: var(--choral-1);
+      }
+
+      .step-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--brown-main);
+        margin-bottom: 8px;
+      }
+
+      .step-desc {
+        font-size: 16px;
+        color: var(--brown-main);
+      }
+
+      .step-phone {
+        margin-top: auto;
+        width: 100%;
+      }
+
+      .step-phone img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* SPECIAL FEATURE (app-landing-6) - 배경 이미지 영역 + 왼쪽 텍스트 */
+      .section-special-feature {
+        position: relative;
+        width: 100%;
+        min-height: 480px;
+        padding: 112px 270px;
+        background: linear-gradient(180deg, #ffffff 0%, #fde4e3 100%);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+      }
+
+      .special-feature-inner {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        max-width: 604px;
+      }
+
+      .special-feature-eyebrow {
+        font-size: 14px;
+        font-weight: 800;
+        color: var(--choral-1);
+        line-height: normal;
+        margin-bottom: 8px;
+      }
+
+      .special-feature-title-block {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        line-height: 1.2;
+        margin-bottom: 24px;
+      }
+
+      .special-feature-title {
+        font-size: 32px;
+        font-weight: 600;
+        color: var(--brown-main);
+      }
+
+      .special-feature-title span {
+        font-weight: 700;
+        font-style: italic;
+      }
+
+      .special-feature-desc {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.7;
+        color: var(--text-muted);
+        max-width: 400px;
+      }
+
+      .special-feature-visual {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .special-feature-visual img {
+        max-width: 540px;
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* OUR APP */
+      .section-app {
+        background: var(--bg-cream);
+        padding: 88px 270px 108px;
+        text-align: center;
+      }
+
+      .app-label {
+        font-size: 18px;
+        font-weight: 800;
+        color: var(--choral-1);
+        margin-bottom: 8px;
+      }
+
+      .app-title {
+        font-size: 30px;
+        color: var(--brown-main);
+        margin-bottom: 40px;
+      }
+
+      .app-logo {
+        width: 240px;
+        margin: 0 auto 32px;
+        border-radius: 32px;
+        box-shadow: 0 8px 16px rgba(201, 96, 85, 0.3);
+      }
+
+      .app-logo img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 32px;
+      }
+
+      .app-desc {
+        font-size: 18px;
+        color: var(--text-muted);
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      /* FOOTER CTA + FOOTER */
+      .footer-cta {
+        background: var(--brown-main);
+        color: #ffffff;
+        text-align: center;
+        padding: 80px 20px 80px;
+      }
+
+      .footer-cta-title {
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 1.3;
+        margin-bottom: 12px;
+      }
+
+      .footer-cta-title-accent {
+        font-weight: 600;
+        font-style: italic;
+      }
+
+      .footer-cta-subtitle {
+        font-size: 18px;
+        color: #ffc1bb;
+        margin-bottom: 36px;
+      }
+
+      .footer-store-row {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .footer-store-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 18px 32px;
+        width: 260px;
+        height: 74px;
+        border-radius: 42px;
+        background: var(--choral-1);
+        color: #ffffff;
+        font-weight: 600;
+        box-shadow: 0 8px 16px rgba(100, 44, 38, 0.3);
+        text-align: left;
+      }
+
+      .footer-store-icon {
+        width: 28px;
+        display: inline-block;
+      }
+
+      .footer-store-icon img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .footer-store-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        line-height: 1.2;
+      }
+
+      .footer-store-label {
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      .footer-store-name {
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .footer-bottom {
+        background: var(--brown-dark);
+        color: #ffc1bb;
+        padding: 28px 270px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 12px;
+      }
+
+      .footer-bottom-logo {
+        width: 32px;
+      }
+
+      .footer-bottom-logo img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 40px;
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 1200px) {
+        .top-bar,
+        .hero,
+        .section-why,
+        .section-how,
+        .section-app,
+        .footer-bottom {
+          padding-inline: 24px;
+        }
+
+        .section-special-feature {
+          padding: 80px 24px;
+          min-height: 400px;
+        }
+
+        .special-feature-title {
+          font-size: 28px;
+        }
+
+        .hero {
+          height: 840px;
+        }
+
+        .hero-phone {
+          margin: 40px auto 0;
+        }
+
+        .hero-orbit-outer {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .hero-visual {
+          justify-self: center;
+        }
+
+        .feature-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .how-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .step-card {
+          height: auto;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          gap: 16px;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 768px) {
+        body {
+          font-size: 14px;
+        }
+
+        .top-bar {
+          padding: 12px 16px;
+        }
+
+        .hero {
+          padding: 96px 20px 72px;
+          min-height: auto;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .hero-inner {
+          width: 100%;
+          max-width: 480px;
+          margin: 0 auto;
+          align-items: center;
+          text-align: center;
+          gap: 32px;
+        }
+
+        .hero-heading-block {
+          align-items: center;
+        }
+
+        .how-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-title-main,
+        .hero-title-brand,
+        .section-title,
+        .app-title,
+        .footer-cta-title {
+          font-size: 32px;
+        }
+
+        .hero-subtitle,
+        .feature-desc,
+        .app-desc {
+          font-size: 16px;
+        }
+
+        .hero-cta-row {
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .store-btn {
+          width: 100%;
+          max-width: 320px;
+        }
+
+        .section-why,
+        .section-how,
+        .section-app {
+          padding: 56px 20px 64px;
+        }
+
+        .section-special-feature {
+          padding: 72px 20px;
+          min-height: 0;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .special-feature-inner {
+          max-width: 100%;
+          align-items: center;
+          text-align: center;
+        }
+
+        .special-feature-visual {
+          justify-content: center;
+          margin-top: 24px;
+        }
+        
+        .step-phone {
+          display: flex;
+          justify-content: center;
+        }
+
+        .step-phone img {
+          width: 60%;
+        }
+
+        .stripe {
+          padding: 40px 16px;
+          font-size: 18px;
+        }
+
+        .footer-bottom {
+          padding: 24px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!-- Top bar -->
+      <header>
+        <div class="top-bar">
+          <div class="top-logo" aria-label="HangXom logo">
+            <img src="image/logo-1.svg" alt="HangXom logo" />
+          </div>
+        </div>
+
+        <!-- Hero (from current Figma frame) -->
+        <section class="hero">
+          <div class="hero-inner">
+            <div class="hero-heading-block">
+              <h1 class="hero-title-main">Mua sắm địa phương,</h1>
+              <h2 class="hero-title-brand">
+                with <span>HangXom</span>
+              </h2>
+              <p class="hero-subtitle">
+                Hãy thử giao dịch với hàng xóm <br /> ngay bây giờ bằng ‘HangXom’!
+              </p>
+            </div>
+
+            <div class="hero-cta-row">
+              <a href="https://play.google.com/store/apps/details?id=com.daonio.hangxom&pcampaignid=web_share" class="store-btn store-btn-google" type="button">
+                <span class="store-btn-icon" aria-hidden="true">
+                  <img
+                    src="image/playstore.svg"
+                    alt=""
+                  />
+                </span>
+                <span>Google Play</span>
+               </a>
+              <a href="https://apps.apple.com/kr/app/hangxom/id6757548221" class="store-btn store-btn-apple" type="button">
+                <span class="store-btn-icon" aria-hidden="true">
+                  <img
+                    src="image/appstore.svg"
+                    alt=""
+                  />
+                </span>
+                <span>App Store</span>
+            </a>
+            </div>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <img src="image/test-1.png" alt="" />
+          </div>
+        </section>
+      </header>
+
+      <!-- Stripe -->
+      <section class="stripe">
+        Chợ địa phương của bạn, <br />
+        ngay trong tầm tay!
+      </section>
+
+      <!-- Why HangXom -->
+      <section class="section-why">
+        <div class="eyebrow">WHY HangXom</div>
+        <h2 class="section-title">
+          Tất cả những gì bạn yêu thích về<br />
+          <span>thương mại địa phương.</span>
+        </h2>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <img
+                src="image/why-icon-1.svg"
+                alt=""
+              />
+            </div>
+            <h3 class="feature-title">Vị trí hàng đầu</h3>
+            <p class="feature-desc">
+              Xem các danh sách từ những người trong khu vực chính xác của bạn trước tiên. Không còn phải chờ đợi vận chuyển — chỉ cần đi bộ qua và lấy hàng.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <img
+                src="image/why-icon-2.svg"
+                alt=""
+              />
+            </div>
+            <h3 class="feature-title">An toàn & Đáng tin cậy</h3>
+            <p class="feature-desc">
+              Người dùng đã xác minh, vị trí và cuộc trò chuyện an toàn giúp mỗi giao dịch trở nên an toàn và thân thiện.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <img
+                src="image/why-icon-3.svg"
+                alt=""
+              />
+            </div>
+            <h3 class="feature-title">Trò chuyện trực tuyến</h3>
+            <p class="feature-desc">
+              Trò chuyện ngay lập tức với người mua và người bán. Thảo luận, đặt câu hỏi và sắp xếp cuộc hẹn — tất cả trong một nơi.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section class="section-how">
+        <div class="eyebrow">HOW IT WORKS</div>
+        <h2 class="section-title">
+          Bắt đầu giao dịch<br />
+          <span>trong 4 bước đơn giản.</span>
+        </h2>
+
+        <div class="how-grid">
+          <article class="step-card">
+            <div>
+              <div class="step-badge">
+                <div class="step-number">1</div>
+              </div>
+              <h3 class="step-title">Chọn khu vực của bạn</h3>
+              <p class="step-desc">Mở ứng dụng <br />và xác nhận <br />khu vực của bạn.</p>
+            </div>
+            <div class="step-phone">
+              <img src="image/phone-1.png" alt="" />
+            </div>
+          </article>
+
+          <article class="step-card">
+            <div>
+              <div class="step-badge">
+                <div class="step-number">2</div>
+              </div>
+              <h3 class="step-title">Duyệt hoặc xem danh sách</h3>
+              <p class="step-desc">
+                Cuộn qua danh sách<br />hoặc chụp <br />một bức ảnh để bán.
+              </p>
+            </div>
+            <div class="step-phone">
+              <img src="image/phone-2.png" alt="" />
+            </div>
+          </article>
+
+          <article class="step-card">
+            <div>
+              <div class="step-badge">
+                <div class="step-number">3</div>
+              </div>
+              <h3 class="step-title">Trò chuyện & thỏa thuận</h3>
+              <p class="step-desc">
+                Gửi tin nhắn<br />cho người bán hoặc<br />người mua trực tiếp.
+              </p>
+            </div>
+            <div class="step-phone">
+              <img src="image/phone-3.png" alt="" />
+            </div>
+          </article>
+
+          <article class="step-card">
+            <div>
+              <div class="step-badge">
+                <div class="step-number">4</div>
+              </div>
+              <h3 class="step-title">Gặp gỡ<br /> & trao đổi!</h3>
+              <p class="step-desc">
+                Gặp gỡ<br />hàng xóm của bạn,<br />và thực hiện giao dịch.
+              </p>
+            </div>
+            <div class="step-phone">
+              <img src="image/phone-4.png" alt="" />
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Special Feature (app-landing-6): 배경 이미지는 .section-special-feature 의 background-image 에 경로 입력 -->
+      <section class="section-special-feature" aria-label="Special Feature">
+        <div class="special-feature-inner">
+          <p class="special-feature-eyebrow">Special Feature</p>
+          <div class="special-feature-title-block">
+            <h2 class="special-feature-title">Giao dịch an toàn với</h2>
+            <h2 class="special-feature-title"><span>Người dùng đã xác minh.</span></h2>
+          </div>
+          <p class="special-feature-desc">'Người dùng được xác minh bởi hàng xóm' chỉ những cư dân sống trong cùng khu phức hợp với tôi. Việc xác minh này giúp tạo điều kiện cho các giao dịch an toàn và thuận tiện hơn với những người sống gần đó.</p>
+        </div>
+        <div class="special-feature-visual" aria-hidden="true">
+          <img src="image/test-2.png" alt="" />
+        </div>
+      </section>
+
+      <!-- Our app -->
+      <section class="section-app">
+        <div class="app-label">OUR APP</div>
+        <h2 class="app-title">Gặp gỡ HangXom</h2>
+        <div class="app-logo" aria-hidden="true">
+          <img
+            src="image/appicon.svg"
+            alt=""
+          />
+        </div>
+        <p class="app-desc">
+          HangXom mang chợ địa phương của bạn <br /> trực tiếp vào túi của bạn — bất cứ lúc nào, bất cứ đâu.
+        </p>
+      </section>
+
+      <!-- Footer CTA -->
+      <section class="footer-cta">
+        <h2 class="footer-cta-title">
+          Hàng xóm của bạn<br />
+          <span class="footer-cta-title-accent">đã tham gia HangXom.</span>
+        </h2>
+        <p class="footer-cta-subtitle">
+          Tải xuống ngay và khám phá những gì<br />đang được rao bán ngay gần đây.
+        </p>
+        <div class="footer-store-row">
+          <a href="https://play.google.com/store/apps/details?id=com.daonio.hangxom&pcampaignid=web_share" class="footer-store-btn footer-store-google">
+            <span class="footer-store-icon" aria-hidden="true">
+              <img
+                src="image/playstore.svg"
+                alt=""
+              />
+            </span>
+            <span class="footer-store-text">
+              <span class="footer-store-label">Get it on</span>
+              <span class="footer-store-name">Google Play</span>
+            </span>
+          </a>
+          <a href="https://apps.apple.com/kr/app/hangxom/id6757548221" class="footer-store-btn footer-store-apple">
+            <span class="footer-store-icon" aria-hidden="true">
+              <img
+                src="image/appstore.svg"
+                alt=""
+              />
+            </span>
+            <span class="footer-store-text">
+              <span class="footer-store-label">Download on the</span>
+              <span class="footer-store-name">App Store</span>
+            </span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Footer bottom -->
+      <footer class="footer-bottom">
+        <div class="footer-bottom-logo" aria-label="HangXom logo">
+          <img
+            src="image/logo-2.svg"
+            alt="HangXom logo small"
+          />
+        </div>
+        <div>© 2025 HangXom. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Contact</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
